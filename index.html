@@ -9,41 +9,53 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #e6f0fa;
-      color: #003366;
+      background-color: #f9f9f9;
+      color: #333;
       line-height: 1.6;
     }
     header {
-      background-color: #0077b6;
+      background-color: #cc0000;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     nav {
-      background-color: #005f87;
+      background-color: #990000;
       padding: 1rem;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      background-color: #cc0000;
+      transition: background-color 0.3s ease;
     }
     nav a:hover {
-      color: #a9d6e5;
+      background-color: #b30000;
+    }
+    .donate-btn {
+      background-color: #ffffff;
+      color: #cc0000;
+      border: 2px solid #cc0000;
+    }
+    .donate-btn:hover {
+      background-color: #cc0000;
+      color: white;
     }
     section {
       padding: 3rem 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
     section h2 {
-      color: #005f87;
-      border-bottom: 2px solid #0077b6;
+      color: #cc0000;
+      border-bottom: 2px solid #990000;
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
     }
@@ -61,14 +73,39 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
     footer {
-      background-color: #0077b6;
+      background-color: #990000;
       color: white;
       text-align: center;
-      padding: 1.5rem 1rem;
+      padding: 2rem 1rem;
       margin-top: 2rem;
     }
     a {
-      color: #005f87;
+      color: #cc0000;
+    }
+    .donation-section {
+      background-color: #fff0f0;
+      text-align: center;
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .donation-section h2 {
+      margin-bottom: 1rem;
+    }
+    .donation-section button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .donation-section button:hover {
+      background-color: #990000;
     }
   </style>
 </head>
@@ -83,6 +120,7 @@
     <a href="#about">About Us</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
+    <a href="#donate" class="donate-btn">Make a Donation</a>
   </nav>
 
   <section id="home">
@@ -116,6 +154,12 @@
     <h2>Contact</h2>
     <p>Email us at <a href="mailto:guizhouproject@example.com">guizhouproject@example.com</a></p>
     <p>Follow us on Instagram: <a href="https://instagram.com/guizhouproject" target="_blank">@guizhouproject</a></p>
+  </section>
+
+  <section id="donate" class="donation-section">
+    <h2>Make a Donation</h2>
+    <p>Your donation helps us bring resources, education, and hope to the communities of Guizhou. Every contribution counts.</p>
+    <button onclick="window.location.href='https://your-donation-link.com'">Donate Now</button>
   </section>
 
   <footer>
