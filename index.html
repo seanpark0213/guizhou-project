@@ -28,34 +28,39 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: transform 0.3s, color 0.3s;
     }
     nav a:hover {
       color: #a9c8ff;
+      transform: scale(1.2);
     }
     header {
       background: url('Guizhou-China-Miao-villages-Xijiang.jpg') no-repeat center center/cover;
       color: white;
-      padding: 4rem 1rem 4rem 2rem;
+      padding: 6rem 2rem 6rem 2rem;
       text-align: left;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin: 0;
       color: white;
     }
     header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+      font-size: 1.5rem;
+      margin-top: 1rem;
     }
     section {
       padding: 3rem 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-top: 2rem;
     }
     section.visible {
       opacity: 1;
@@ -71,12 +76,12 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 1rem;
     }
     .gallery img {
       width: 220px;
       height: 150px;
       object-fit: cover;
-      margin: 10px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
@@ -97,9 +102,11 @@
       border-radius: 5px;
       text-decoration: none;
       margin-left: auto;
+      transition: background-color 0.3s, transform 0.3s;
     }
     .donate-button:hover {
       background-color: #003f87;
+      transform: scale(1.05);
     }
   </style>
 </head>
