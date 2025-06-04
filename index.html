@@ -51,7 +51,7 @@
       transform: scale(1.1);
     }
     header {
-      background: url('Guizhou-China-Miao-villages-Xijiang.jpg') no-repeat center center/cover;
+      background: url('Travel-in-Guizhou-China-scaled%20-%20Edited.jpg') no-repeat center center/cover;
       color: white;
       padding: 16rem 2rem;
       text-align: left;
@@ -96,7 +96,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 2rem;
     }
     .gallery img {
       width: 220px;
@@ -123,12 +123,44 @@
     a {
       color: black;
     }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .donate-form label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .donate-form input[type="radio"],
+    .donate-form input[type="number"],
+    .donate-form input[type="email"] {
+      margin-left: 0.5rem;
+    }
   </style>
 </head>
 <body>
   <nav>
     <a href="#home">Home</a>
-    <a href="#about">About Us</a>
+    <div class="dropdown">
+      <a href="#about">About Us ▼</a>
+      <div class="dropdown-content">
+        <p><a href="#about">Our Mission</a></p>
+        <p><a href="#about">Our Location</a></p>
+        <p><a href="#about">Our Impact</a></p>
+      </div>
+    </div>
     <a href="#gallery">Gallery</a>
     <a href="#visits">Upcoming Visits</a>
     <a href="#contact">Contact</a>
@@ -154,9 +186,9 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="placeholder1.jpg" alt="Service Activity 1" />
-      <img src="placeholder2.jpg" alt="Service Activity 2" />
-      <img src="placeholder3.jpg" alt="Service Activity 3" />
+      <img src="WechatIMG1503.jpg" alt="Service Activity 1" />
+      <img src="WechatIMG1504.jpg" alt="Service Activity 2" />
+      <img src="WechatIMG1505.jpg" alt="Service Activity 3" />
     </div>
     <div class="gallery-upload">
       <label for="upload">Upload your image:</label>
@@ -169,7 +201,7 @@
   <section id="visits">
     <h2>Upcoming Visits</h2>
     <p>Next student service trip is scheduled for July 2025. Stay tuned for updates and ways to get involved!</p>
-    <div class="gallery">
+    <div class="gallery" style="gap: 3rem;">
       <a href="visit1.html"><img src="September%20(1).png" alt="September Visit 1"></a>
       <a href="visit2.html"><img src="September.png" alt="September Visit 2"></a>
     </div>
@@ -184,16 +216,19 @@
   <section id="donate">
     <h2>Donate</h2>
     <p>Your support enables us to continue our work in Guizhou. Every contribution makes a difference.</p>
-    <form>
-      <label><input type="radio" name="frequency" value="once"> Once</label>
-      <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
-      <br><br>
-      <label><input type="radio" name="amount" value="50"> ¥50</label>
-      <label><input type="radio" name="amount" value="100"> ¥100</label>
-      <label><input type="radio" name="amount" value="200"> ¥200</label>
-      <br><br>
+    <form class="donate-form">
+      <fieldset>
+        <legend>Donation Frequency</legend>
+        <label><input type="radio" name="frequency" value="once"> Once</label>
+        <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
+      </fieldset>
+      <fieldset>
+        <legend>Amount</legend>
+        <label><input type="radio" name="amount" value="50"> ¥50</label>
+        <label><input type="radio" name="amount" value="100"> ¥100</label>
+        <label><input type="radio" name="amount" value="200"> ¥200</label>
+      </fieldset>
       <label>Other Amount: <input type="number" name="customAmount" placeholder="Enter amount"></label>
-      <br><br>
       <label>Email: <input type="email" name="email" placeholder="you@example.com"></label>
       <br><br>
       <button class="donate-button" type="submit">Donate</button>
@@ -219,3 +254,4 @@
   </script>
 </body>
 </html>
+
