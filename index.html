@@ -2,24 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Guizhou Project</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: white;
       color: black;
-      line-height: 1.6;
       scroll-behavior: smooth;
     }
     nav {
       background-color: white;
       padding: 1rem 2rem;
       display: flex;
-      justify-content: flex-start;
-      gap: 2rem;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -28,113 +25,14 @@
     nav a {
       color: black;
       text-decoration: none;
+      margin-right: 2rem;
       font-weight: bold;
       font-size: 1.1rem;
-      transition: transform 0.3s, color 0.3s;
+      transition: transform 0.3s;
       position: relative;
     }
     nav a:hover {
-      color: #00aa00;
       transform: scale(1.3);
-    }
-    nav a[href="#about"] {
-      transition: transform 0.3s;
-    }
-    nav a[href="#about"]:hover {
-      transform: scale(1.5);
-    }
-    nav a[href="#about"]::after {
-      content: '▼';
-      display: inline-block;
-      margin-left: 5px;
-      transition: transform 0.3s;
-    }
-    nav a[href="#about"]:hover::after {
-      transform: rotate(180deg);
-    }
-    .donate-button {
-      background-color: #00cc00;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-left: auto;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    .donate-button:hover {
-      background-color: #009900;
-      transform: scale(1.1);
-    }
-    header {
-      background: url('Travel-in-Guizhou-China-scaled%20-%20Edited.jpg') no-repeat center center/cover;
-      color: white;
-      padding: 16rem 2rem;
-      text-align: left;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      font-size: 4.5rem;
-      margin: 0;
-      color: white;
-    }
-    header h1:hover {
-      transform: none;
-    }
-    header p {
-      font-size: 1.8rem;
-      margin-top: 1rem;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      background: transparent;
-      box-shadow: none;
-      margin-top: 2rem;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    section h2 {
-      color: black;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      border-bottom: none;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .gallery img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-    }
-    .gallery-upload {
-      margin-top: 1rem;
-    }
-    footer {
-      background-color: #003f87;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 2rem;
-    }
-    a {
-      color: black;
     }
     .dropdown {
       position: relative;
@@ -143,27 +41,105 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #f9f9f9;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      padding: 12px 16px;
-      z-index: 1;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      top: 2rem;
     }
     .dropdown:hover .dropdown-content {
       display: block;
     }
-    .donate-form label {
+    .dropdown-arrow::after {
+      content: '▼';
+      display: inline-block;
+      margin-left: 5px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .dropdown:hover .dropdown-arrow::after {
+      transform: rotate(180deg);
+    }
+    .donate-button-nav {
+      margin-left: auto;
+      background-color: #00cc00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .donate-button-nav:hover {
+      background-color: #009900;
+      transform: scale(1.1);
+    }
+    header {
+      background: url('Travel-in-Guizhou-China-scaled%20-%20Edited.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: left;
+      padding: 12rem 2rem 10rem;
+      border-bottom-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.5rem;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .split-section {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .split-section img {
+      max-width: 45%;
+      border-radius: 10px;
+    }
+    .split-section p {
+      flex: 1;
+      min-width: 250px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    .donate-form {
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+    .donate-form label,
+    .donate-form input,
+    .donate-form fieldset {
       display: block;
-      margin: 0.5rem 0;
+      margin-bottom: 1rem;
     }
-    .donate-form input[type="radio"],
-    .donate-form input[type="number"],
-    .donate-form input[type="email"] {
-      margin-left: 0.5rem;
-    }
-    .visits img[src*="September"] {
-      width: 350px !important;
-      height: 250px !important;
+    footer {
+      background-color: #003f87;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
     }
   </style>
 </head>
@@ -171,17 +147,22 @@
   <nav>
     <a href="#home">Home</a>
     <div class="dropdown">
-      <a href="#about">About Us</a>
+      <a href="#about" class="dropdown-arrow">About Us</a>
       <div class="dropdown-content">
-        <p><a href="#about">Our Mission</a></p>
-        <p><a href="#about">Our Location</a></p>
-        <p><a href="#about">Our Impact</a></p>
+        <a href="about-us.html#mission">Our Mission</a><br>
+        <a href="about-us.html#location">Our Location</a><br>
+        <a href="about-us.html#impact">Our Impact</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#joinus" class="dropdown-arrow">Join Us</a>
+      <div class="dropdown-content">
+        <a href="#donate">Make Donations</a><br>
+        <a href="#signup">Sign Up for Trip</a>
       </div>
     </div>
     <a href="#gallery">Gallery</a>
-    <a href="#visits">Upcoming Visits</a>
-    <a href="#donate">Donate</a>
-    <a href="#contact">Contact</a>
+    <a class="donate-button-nav" href="#donate">Donate</a>
   </nav>
 
   <header>
@@ -189,47 +170,39 @@
     <p>Empowering Communities. Inspiring Change.</p>
   </header>
 
-  <section id="home">
-    <h2>Welcome</h2>
-    <p>The Guizhou Project is a student-led initiative dedicated to supporting the underdeveloped communities in Guizhou through service and education. Join us in making a meaningful impact.</p>
+  <section id="home" class="split-section">
+    <p>The Guizhou Project is a student-led initiative supporting underdeveloped communities in Guizhou through education and service. Join us in making a meaningful impact.</p>
+    <img src="Add a heading.jpg" alt="Guizhou scenery">
   </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We are a group of passionate students committed to social responsibility. Each year, we visit Guizhou to provide essential support through teaching, donations, and community engagement. The project fosters mutual understanding and lasting change.</p>
-    <p><a href="about-us.html">See more</a></p>
+  <section id="about" class="split-section">
+    <img src="Add a heading (1).png" alt="Volunteering students">
+    <div>
+      <h2>About Us</h2>
+      <p>We are passionate students committed to social responsibility. Every year, we visit Guizhou to teach, donate, and engage in local community life.</p>
+      <p><a href="about-us.html">See more</a></p>
+    </div>
   </section>
 
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="WechatIMG1503.jpg" alt="Service Activity 1" />
-      <img src="WechatIMG1504.jpg" alt="Service Activity 2" />
-      <img src="WechatIMG1505.jpg" alt="Service Activity 3" />
+      <img src="WechatIMG1503.jpg" alt="Gallery image 1">
+      <img src="WechatIMG1504.jpg" alt="Gallery image 2">
+      <img src="WechatIMG1505.jpg" alt="Gallery image 3">
+      <img src="WechatIMG1503.jpg" alt="Gallery image 4">
+      <img src="WechatIMG1504.jpg" alt="Gallery image 5">
+      <img src="WechatIMG1505.jpg" alt="Gallery image 6">
     </div>
-    <div class="gallery-upload">
-      <label for="upload">Upload your image:</label>
-      <input type="file" id="upload" name="upload" accept="image/*">
-      <br><br>
-      <a href="gallery.html" target="_blank">See more</a>
-    </div>
-  </section>
-
-  <section id="visits" class="visits">
-    <h2>Upcoming Visits</h2>
-    <p>Next student service trip is scheduled for July 2025. Stay tuned for updates and ways to get involved!</p>
-    <div class="gallery" style="gap: 3rem;">
-      <a href="visit1.html"><img src="Add a heading.jpg" alt="September Visit 1"></a>
-      <a href="visit2.html"><img src="Add a heading (1).png" alt="September Visit 2"></a>
-    </div>
+    <p><a href="gallery.html" target="_blank">See more</a></p>
   </section>
 
   <section id="donate">
     <h2>Donate</h2>
-    <p>Your support enables us to continue our work in Guizhou. Every contribution makes a difference.</p>
+    <p>Your support empowers rural students in Guizhou to dream bigger. Every bit helps us reach more communities.</p>
     <form class="donate-form">
       <fieldset>
-        <legend>Donation Frequency</legend>
+        <legend>Frequency</legend>
         <label><input type="radio" name="frequency" value="once"> Once</label>
         <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
       </fieldset>
@@ -238,37 +211,23 @@
         <label><input type="radio" name="amount" value="50"> ¥50</label>
         <label><input type="radio" name="amount" value="100"> ¥100</label>
         <label><input type="radio" name="amount" value="200"> ¥200</label>
+        <label>Other: <input type="number" name="customAmount" placeholder="Enter amount"></label>
       </fieldset>
-      <label>Other Amount: <input type="number" name="customAmount" placeholder="Enter amount"></label>
       <label>Email: <input type="email" name="email" placeholder="you@example.com"></label>
-      <br><br>
-      <button class="donate-button" type="submit">Donate</button>
+      <button type="submit" class="donate-button-nav">Donate</button>
     </form>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email us at <a href="mailto:guizhouproject@example.com">guizhouproject@example.com</a></p>
-    <p>Follow us on Instagram: <a href="https://instagram.com/guizhouproject" target="_blank">@guizhouproject</a></p>
-    <p>Visit our <a href="https://mp.weixin.qq.com/s/ErxQZV_R58FM5-Aqz2-L0A" target="_blank">WeChat Official Account</a> for detailed stories and updates from our trips.</p>
+    <p>Email: <a href="mailto:guizhouproject@example.com">guizhouproject@example.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/guizhouproject" target="_blank">@guizhouproject</a></p>
+    <p>WeChat: <a href="https://mp.weixin.qq.com/s/ErxQZV_R58FM5-Aqz2-L0A" target="_blank">Our Official Account</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 The Guizhou Project. All rights reserved.</p>
   </footer>
-
-  <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
 </body>
 </html>
+
