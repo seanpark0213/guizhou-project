@@ -37,10 +37,6 @@
       color: #00aa00;
       transform: scale(1.3);
     }
-    .dropdown-content a:hover {
-      transform: scale(1.2);
-      display: block;
-    }
     .donate-button {
       background-color: #00cc00;
       color: white;
@@ -57,7 +53,7 @@
     header {
       background: url('Travel-in-Guizhou-China-scaled%20-%20Edited.jpg') no-repeat center center/cover;
       color: white;
-      padding: 20rem 2rem;
+      padding: 16rem 2rem;
       text-align: left;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
@@ -65,6 +61,10 @@
       font-size: 4.5rem;
       margin: 0;
       color: white;
+      transition: transform 0.3s;
+    }
+    header h1:hover {
+      transform: scale(1.1);
     }
     header p {
       font-size: 1.8rem;
@@ -96,11 +96,11 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 3rem;
+      gap: 2rem;
     }
     .gallery img {
-      width: 400px;
-      height: auto;
+      width: 220px;
+      height: 150px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -139,11 +139,6 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
-    .dropdown-content a {
-      display: block;
-      margin-bottom: 0.5rem;
-      transition: transform 0.3s;
-    }
     .donate-form label {
       display: block;
       margin: 0.5rem 0;
@@ -161,9 +156,9 @@
     <div class="dropdown">
       <a href="#about">About Us ▼</a>
       <div class="dropdown-content">
-        <a href="#about">Our Mission</a>
-        <a href="#about">Our Location</a>
-        <a href="#about">Our Impact</a>
+        <p><a href="#about">Our Mission</a></p>
+        <p><a href="#about">Our Location</a></p>
+        <p><a href="#about">Our Impact</a></p>
       </div>
     </div>
     <a href="#gallery">Gallery</a>
@@ -206,7 +201,7 @@
   <section id="visits">
     <h2>Upcoming Visits</h2>
     <p>Next student service trip is scheduled for July 2025. Stay tuned for updates and ways to get involved!</p>
-    <div class="gallery">
+    <div class="gallery" style="gap: 3rem;">
       <a href="visit1.html"><img src="September%20(1).png" alt="September Visit 1"></a>
       <a href="visit2.html"><img src="September.png" alt="September Visit 2"></a>
     </div>
