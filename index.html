@@ -9,7 +9,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: white;
+      background-color: #f0f8ff;
       color: black;
       line-height: 1.6;
       scroll-behavior: smooth;
@@ -35,7 +35,11 @@
     }
     nav a:hover {
       color: #00aa00;
+      transform: scale(1.3);
+    }
+    .dropdown-content a:hover {
       transform: scale(1.2);
+      display: block;
     }
     .donate-button {
       background-color: #00cc00;
@@ -53,7 +57,7 @@
     header {
       background: url('Travel-in-Guizhou-China-scaled%20-%20Edited.jpg') no-repeat center center/cover;
       color: white;
-      padding: 30rem 2rem;
+      padding: 20rem 2rem;
       text-align: left;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
@@ -61,7 +65,6 @@
       font-size: 4.5rem;
       margin: 0;
       color: white;
-      transition: none;
     }
     header p {
       font-size: 1.8rem;
@@ -74,8 +77,9 @@
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      background: none;
-      box-shadow: none;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       margin-top: 2rem;
     }
     section.visible {
@@ -92,11 +96,11 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 3rem;
     }
     .gallery img {
-      width: 300px;
-      height: 200px;
+      width: 400px;
+      height: auto;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -113,11 +117,8 @@
       background-color: #003f87;
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
       margin-top: 2rem;
-    }
-    footer p {
-      margin: 0.5rem 0;
     }
     a {
       color: black;
@@ -125,10 +126,6 @@
     .dropdown {
       position: relative;
       display: inline-block;
-    }
-    .dropdown > a::after {
-      content: ' ▼';
-      font-size: 0.7rem;
     }
     .dropdown-content {
       display: none;
@@ -144,7 +141,8 @@
     }
     .dropdown-content a {
       display: block;
-      transition: none;
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s;
     }
     .donate-form label {
       display: block;
@@ -158,19 +156,14 @@
   </style>
 </head>
 <body>
-<body>
-  <!-- [HTML body remains unchanged] -->
-</body>
-</html>
-<body>
   <nav>
     <a href="#home">Home</a>
     <div class="dropdown">
       <a href="#about">About Us ▼</a>
       <div class="dropdown-content">
-        <p><a href="#about">Our Mission</a></p>
-        <p><a href="#about">Our Location</a></p>
-        <p><a href="#about">Our Impact</a></p>
+        <a href="#about">Our Mission</a>
+        <a href="#about">Our Location</a>
+        <a href="#about">Our Impact</a>
       </div>
     </div>
     <a href="#gallery">Gallery</a>
@@ -213,7 +206,7 @@
   <section id="visits">
     <h2>Upcoming Visits</h2>
     <p>Next student service trip is scheduled for July 2025. Stay tuned for updates and ways to get involved!</p>
-    <div class="gallery" style="gap: 3rem;">
+    <div class="gallery">
       <a href="visit1.html"><img src="September%20(1).png" alt="September Visit 1"></a>
       <a href="visit2.html"><img src="September.png" alt="September Visit 2"></a>
     </div>
@@ -264,13 +257,6 @@
       observer.observe(section);
     });
   </script>
-    <footer>
-    <p>Contact us at: guizhouproject@email.com | Tel: +86 123 456 7890</p>
-    <p>© 2025 The Guizhou Project. All rights reserved</p>
-  </footer>
-</body>
-</html>
-
 </body>
 </html>
 
