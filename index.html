@@ -9,53 +9,50 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #f0f8ff;
+      color: #002855;
       line-height: 1.6;
     }
     header {
-      background-color: #cc0000;
+      background: url('02e9f524-30a1-44fe-a7b8-f3b95d82d991.png') no-repeat center center/cover;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
+      padding: 4rem 1rem 4rem 2rem;
+      text-align: left;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: white;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
     }
     nav {
-      background-color: #990000;
-      padding: 1rem;
+      background-color: #003f87;
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      justify-content: flex-start;
+      gap: 2rem;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      background-color: #cc0000;
-      transition: background-color 0.3s ease;
+      transition: color 0.3s;
     }
     nav a:hover {
-      background-color: #b30000;
-    }
-    .donate-btn {
-      background-color: #ffffff;
-      color: #cc0000;
-      border: 2px solid #cc0000;
-    }
-    .donate-btn:hover {
-      background-color: #cc0000;
-      color: white;
+      color: #a9c8ff;
     }
     section {
       padding: 3rem 2rem;
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
     }
     section h2 {
-      color: #cc0000;
-      border-bottom: 2px solid #990000;
+      color: #003f87;
+      border-bottom: 2px solid #0077cc;
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
     }
@@ -73,39 +70,25 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
     footer {
-      background-color: #990000;
+      background-color: #003f87;
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
       margin-top: 2rem;
     }
     a {
-      color: #cc0000;
+      color: #003f87;
     }
-    .donation-section {
-      background-color: #fff0f0;
-      text-align: center;
-      padding: 2rem;
-      margin: 2rem auto;
-      border-radius: 10px;
-      max-width: 600px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .donation-section h2 {
-      margin-bottom: 1rem;
-    }
-    .donation-section button {
-      background-color: #cc0000;
+    .donate-button {
+      background-color: #0055cc;
       color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      padding: 0.5rem 1rem;
       border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      text-decoration: none;
+      margin-left: auto;
     }
-    .donation-section button:hover {
-      background-color: #990000;
+    .donate-button:hover {
+      background-color: #003f87;
     }
   </style>
 </head>
@@ -120,7 +103,7 @@
     <a href="#about">About Us</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
-    <a href="#donate" class="donate-btn">Make a Donation</a>
+    <a href="#donate" class="donate-button">Donate</a>
   </nav>
 
   <section id="home">
@@ -156,10 +139,10 @@
     <p>Follow us on Instagram: <a href="https://instagram.com/guizhouproject" target="_blank">@guizhouproject</a></p>
   </section>
 
-  <section id="donate" class="donation-section">
-    <h2>Make a Donation</h2>
-    <p>Your donation helps us bring resources, education, and hope to the communities of Guizhou. Every contribution counts.</p>
-    <button onclick="window.location.href='https://your-donation-link.com'">Donate Now</button>
+  <section id="donate">
+    <h2>Donate</h2>
+    <p>Your support enables us to continue our work in Guizhou. Every contribution makes a difference.</p>
+    <p><a href="#" class="donate-button">Make a Donation</a></p>
   </section>
 
   <footer>
